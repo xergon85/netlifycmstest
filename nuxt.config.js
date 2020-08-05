@@ -59,15 +59,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxt/content'
   ],
-  /** Generate */
-  generate: {
-    async routes () {
-      const { $content } = require('@nuxt/content')
-      const files = await $content().only(['path']).fetch()
-
-      return files.map(file => file.path === '/index' ? '/' : file.path)
-    }
-  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
